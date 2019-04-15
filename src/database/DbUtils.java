@@ -91,7 +91,7 @@ public class DbUtils {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-		mysqlDS.setURL("jdbc:mysql://localhost:3306/hotel?useSSL=false&allowPublicKeyRetrieval=true");
+		mysqlDS.setURL("jdbc:mysql://localhost:3306/hotel?useSSL=false&allowPublicKeyRetrieval=true&serverTimezone=UTC");
 		mysqlDS.setUser("root");
 		mysqlDS.setPassword("root");
 		return mysqlDS;
