@@ -67,11 +67,11 @@ public class BillMain extends JFrame implements ActionListener
 		     
 			
 		}
-		else if(ae.getActionCommand() == "Services list")
+		else if(ae.getActionCommand() == "Services List")
 		{
 			
-			Services mainpage = new Services();
-				mainpage.setVisible(true);
+			Services serv = new Services();
+				serv.setVisible(true);
 				this.setVisible(false);
 		     
 			
