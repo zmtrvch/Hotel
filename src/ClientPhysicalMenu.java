@@ -61,7 +61,9 @@ public class ClientPhysicalMenu extends JFrame implements ActionListener
 		else if(ae.getActionCommand() == "Edit")
 		{
 			
-
+			ClientPhysicalEdit clientphysical = new ClientPhysicalEdit();
+			clientphysical.setVisible(true);
+			this.setVisible(false);
 		     
 			
 		}
