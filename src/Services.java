@@ -1,6 +1,9 @@
 import javax.swing.*;
+import java.util.List;
 import javax.swing.table.DefaultTableModel;
 //import net.proteanit.sql.DbUtils;
+
+import database.DbUtils;
 
 import java.awt.event.*;
 import java.sql.DriverManager;
@@ -36,6 +39,22 @@ public class Services extends JFrame implements ActionListener, KeyListener
 	            { "David Kelly", "02-01-2019", "Laundry" }, 
 	            { "Alive Willy", "04-01-2019", "Dinner" }, 
 	        }; 
+		
+		String query = "select surname as Surname, date_start as date, service_name as ServiceName\r\n" + 
+				"from service\r\n" + 
+				"inner join individual\r\n" + 
+				"on id_client_individual = service.id_guest;";
+		
+		List<ServiceItem> items = DbUtils.GetMapped(query, ServiceItem.class);
+		data = new String[items.size()][3];
+		System.out.print(data[0].length);
+		for(int i = 0; i < data[0].length - 1; i++)
+		{
+			data[i][0] = items.get(i).getSurname();
+			data[i][1] = items.get(i).getDate().toString();
+			data[i][2] = items.get(i).getServiceName();
+		}
+		
 		this.tableModel = new DefaultTableModel(data, columnNames);
 		this.table = new JTable(this.tableModel);
 		
