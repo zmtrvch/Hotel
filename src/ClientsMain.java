@@ -53,7 +53,9 @@ public class ClientsMain extends JFrame implements ActionListener
 		if(ae.getActionCommand() == "Фізичні")
 		{
 			
-			
+			ClientPhysical clientphysical = new ClientPhysical();
+				clientphysical.setVisible(true);
+				this.setVisible(false);
 			
 		}
 		else if(ae.getActionCommand() == "Юридичні")
