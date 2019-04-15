@@ -31,17 +31,17 @@ public class CalculateBill extends JFrame implements ActionListener, ItemListene
 		
 		//DataConnection dc = new DataConnection(); //клас з під'єднанням до бази даний
 		//this.dc = dc;
-		this.setTitle("Розрахувати гостя");
+		this.setTitle("Calculate Bills");
 		
 		
-	    this.surname = new JLabel("Прізвище");
+	    this.surname = new JLabel("Surname");
 	    this.panel.add(this.surname);
 	    
 	    //this.comboboxSurname = new JComboBox(dc.getRoomNumber());
-		this.comboboxSurname.setBounds(250, 200, 100, 20);
-		this.comboboxSurname.addItemListener((ItemListener) this);
-		this.comboboxSurname.addItemListener(this);
-		this.panel.add(this.comboboxSurname);
+		//this.comboboxSurname.setBounds(250, 200, 100, 20);
+		//this.comboboxSurname.addItemListener((ItemListener) this);
+		//this.comboboxSurname.addItemListener(this);
+		//this.panel.add(this.comboboxSurname);
 	  
        
 		this.chooser = new JDateChooser();
@@ -51,20 +51,20 @@ public class CalculateBill extends JFrame implements ActionListener, ItemListene
 		
 
 		
-		this.panel.add(new JLabel("Оберіть дату:"));
+		this.panel.add(new JLabel("Chose date:"));
 		panel.add(chooser);
 		
 		
-		this.getRes = new JButton("Отримати рахунок");
+		this.getRes = new JButton("Get Bill");
 		 this.panel.add(this.getRes);
 		 getRes.addActionListener(this);
-		 this.getBack = new JButton("Повернутись");
+		 this.getBack = new JButton("Return");
 		 this.panel.add(this.getBack);
 		 this.getBack.addActionListener(this);
 		
 		this.add(this.panel);
 		this.setSize(250, 300);
-		this.setTitle("Отримання рахунку");
+		this.setTitle("Invoice Receipt");
 		this.setLocationRelativeTo(null);
 		this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 	}
@@ -74,14 +74,14 @@ public class CalculateBill extends JFrame implements ActionListener, ItemListene
 	{
 		
 		
-	 if(ae.getActionCommand() == "Повернутись")
+	 if(ae.getActionCommand() == "Return")
 		{
 		 MainPage addroom = new MainPage();
 			addroom.setVisible(true);
 			this.setVisible(false);
 		}
 	
-	 else if(ae.getActionCommand() == "Отримати рахунок")
+	 else if(ae.getActionCommand() == "Get Bill")
 			{
 		 
 		        // занеення інформації в базу, після створення екземпляру класу GiveBill - вікно, де буде виводитись інформація про надений рахунок

@@ -31,12 +31,12 @@ public class ClientCompany extends JFrame implements ActionListener
 		this.getContentPane().add(textField);
 		textField.setColumns(10);
 		
-		JLabel lblName = new JLabel("Назва Компанії");
+		JLabel lblName = new JLabel("Company");
 		lblName.setBounds(45, 31, 250, 20);
 		this.getContentPane().add(lblName);
 		
 		
-		JLabel lblPhone = new JLabel("Номер телефону");
+		JLabel lblPhone = new JLabel("Phone");
 		lblPhone.setBounds(45, 68, 250, 20);
 		this.getContentPane().add(lblPhone);
 		
@@ -45,7 +45,7 @@ public class ClientCompany extends JFrame implements ActionListener
 		this.getContentPane().add(textField_1);
 		textField_1.setColumns(10);
 		
-		JLabel lblEmailId = new JLabel("Контакт");
+		JLabel lblEmailId = new JLabel("Contact");
 		lblEmailId.setBounds(45, 115, 250, 20);
 		this.getContentPane().add(lblEmailId);
 		
@@ -54,7 +54,7 @@ public class ClientCompany extends JFrame implements ActionListener
 		this.getContentPane().add(textField_2);
 		textField_2.setColumns(10);
 		
-		JLabel lblBusinessId = new JLabel("Бізнес");
+		JLabel lblBusinessId = new JLabel("Business");
 		lblBusinessId.setBounds(45, 170, 250, 20);
 		this.getContentPane().add(lblBusinessId);
 		
@@ -68,14 +68,14 @@ public class ClientCompany extends JFrame implements ActionListener
 		
 		
 		
-		this.submit = new JButton("Створити");
+		this.submit = new JButton("Create");
 		submit.setBounds(120, 387, 100, 50);
 		this.getContentPane().add(submit);
 		submit.addActionListener(this);
 		
 		
 		 
-		this.getBack = new JButton("Повернутись");
+		this.getBack = new JButton("Return");
 		getBack.setBounds(240, 387, 100, 50);
 		this.getContentPane().add(getBack);
 		getBack.addActionListener(this);
@@ -85,7 +85,7 @@ public class ClientCompany extends JFrame implements ActionListener
 		
 		this.add(this.panel);
 		this.setSize(500, 500);
-		this.setTitle("Юридичний клієнт");
+		this.setTitle("Business Client");
 		this.setLocationRelativeTo(null);
 		this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 	}
@@ -94,13 +94,13 @@ public class ClientCompany extends JFrame implements ActionListener
 	public void actionPerformed(ActionEvent ae) 
 	{
 		
-		if(ae.getActionCommand() == "Створити")
+		if(ae.getActionCommand() == "Create")
 		{
 
 
 			
 		}
-		else if(ae.getActionCommand() == "Повернутись")
+		else if(ae.getActionCommand() == "Return")
 		{
 			
 			 ClientsMain clientsmain = new ClientsMain();

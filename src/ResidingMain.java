@@ -19,13 +19,13 @@ public class ResidingMain extends JFrame implements ActionListener
 	{
 		this.panel = new JPanel();
 	
-		this.giveBill = new JButton("Додати");
+		this.giveBill = new JButton("Add");
 	
 		this.panel.add(this.giveBill);
 		giveBill.addActionListener(this);
 		
 		
-		this.services = new JButton("Видалити");
+		this.services = new JButton("Remove");
 		services.addActionListener(this);
 		
 		
@@ -34,7 +34,7 @@ public class ResidingMain extends JFrame implements ActionListener
 		this.giveBill.setBounds(280,80,200,40);
 		
 		this.panel.add(this.services);
-		this.getBack = new JButton("Повернутись");
+		this.getBack = new JButton("Return");
 		 this.panel.add(this.getBack);
 		 this.getBack.addActionListener(this);
 	
@@ -42,7 +42,7 @@ public class ResidingMain extends JFrame implements ActionListener
 		
 		this.add(this.panel);
 		this.setSize(200, 200);
-		this.setTitle("Проживаючі");
+		this.setTitle("Residents");
 		this.setLocationRelativeTo(null);
 		this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 	}
@@ -50,7 +50,7 @@ public class ResidingMain extends JFrame implements ActionListener
 	@Override
 	public void actionPerformed(ActionEvent ae) 
 	{
-		if(ae.getActionCommand() == "Додати")
+		if(ae.getActionCommand() == "Add")
 		{
 			
 			CalculateBill calculatebill = new CalculateBill();
@@ -59,7 +59,7 @@ public class ResidingMain extends JFrame implements ActionListener
 		     
 			
 		}
-		else if(ae.getActionCommand() == "Видалити")
+		else if(ae.getActionCommand() == "Remove")
 		{
 			
 			AllBills allbills = new AllBills();
@@ -69,7 +69,7 @@ public class ResidingMain extends JFrame implements ActionListener
 			
 		}
 		
-		else if(ae.getActionCommand() == "Повернутись")
+		else if(ae.getActionCommand() == "Return")
 			{
 			 MainPage mainpage = new MainPage();
 				mainpage.setVisible(true);

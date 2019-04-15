@@ -19,13 +19,13 @@ public class ClientsMain extends JFrame implements ActionListener
 	{
 		this.panel = new JPanel();
 	
-		this.giveBill = new JButton("Фізичні");
+		this.giveBill = new JButton("Physical");
 	
 		this.panel.add(this.giveBill);
 		giveBill.addActionListener(this);
 		
 		
-		this.services = new JButton("Юридичні");
+		this.services = new JButton("Company");
 		services.addActionListener(this);
 		
 		
@@ -34,7 +34,7 @@ public class ClientsMain extends JFrame implements ActionListener
 		this.giveBill.setBounds(280,80,200,40);
 		
 		this.panel.add(this.services);
-		this.getBack = new JButton("Повернутись");
+		this.getBack = new JButton("Return");
 		 this.panel.add(this.getBack);
 		 this.getBack.addActionListener(this);
 	
@@ -42,7 +42,7 @@ public class ClientsMain extends JFrame implements ActionListener
 		
 		this.add(this.panel);
 		this.setSize(200, 200);
-		this.setTitle("Клієнти");
+		this.setTitle("Clients");
 		this.setLocationRelativeTo(null);
 		this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 	}
@@ -50,7 +50,7 @@ public class ClientsMain extends JFrame implements ActionListener
 	@Override
 	public void actionPerformed(ActionEvent ae) 
 	{
-		if(ae.getActionCommand() == "Фізичні")
+		if(ae.getActionCommand() == "Physical")
 		{
 			
 			ClientPhysicalMenu clientphysicalmenu = new ClientPhysicalMenu();
@@ -58,7 +58,7 @@ public class ClientsMain extends JFrame implements ActionListener
 				this.setVisible(false);
 			
 		}
-		else if(ae.getActionCommand() == "Юридичні")
+		else if(ae.getActionCommand() == "Company")
 		{
 			
 			ClientCompanyMenu clientcompanymenu = new ClientCompanyMenu();
@@ -68,7 +68,7 @@ public class ClientsMain extends JFrame implements ActionListener
 			
 		}
 		
-		else if(ae.getActionCommand() == "Повернутись")
+		else if(ae.getActionCommand() == "Return")
 			{
 			 MainPage mainpage = new MainPage();
 				mainpage.setVisible(true);
