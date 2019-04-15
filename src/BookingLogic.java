@@ -20,4 +20,9 @@ public class BookingLogic {
 		return insertedId;
 	}
 	
+	public void removeBooking(int bookingId) {
+		String query = "delete from `booking` where `id_booking` = " + bookingId;
+		DbUtils.ExecuteQuery(query);
+	}
+	
 }
