@@ -14,7 +14,7 @@ public class Services extends JFrame implements ActionListener, KeyListener
 	private JTable table;
 	private JScrollPane scrollPane;
 	private JPanel panel;
-	private JButton buttonok;
+	private JButton buttonok, getBack;
 	
 	public Services()
 	{
@@ -29,11 +29,22 @@ public class Services extends JFrame implements ActionListener, KeyListener
 		columns.add("Data");
 		columns.add("Service Name");
 		
+		String[] columnNames = { "Surname", "Data", "Service Name" }; 
+		String[][] data = { 
+	            { "Sen Betan", "01-01-2019", "SPA" }, 
+	            { "Emma Gret", "02-01-2019", "Laundry" }, 
+	            { "David Kelly", "02-01-2019", "Laundry" }, 
+	            { "Alive Willy", "04-01-2019", "Dinner" }, 
+	        }; 
+		this.tableModel = new DefaultTableModel(data, columnNames);
+		this.table = new JTable(this.tableModel);
+		
+		
 		//DataConnection data = new DataConnection(); 
 		//this.tableModel = new DefaultTableModel(data.getAllServices(), columns);
-		this.table = new JTable(this.tableModel)
+		//this.table = new JTable(this.tableModel)
 		
-		
+		/*
 		{
 			public boolean isCellEditable(int row, int column)
 			{
@@ -42,7 +53,7 @@ public class Services extends JFrame implements ActionListener, KeyListener
 				else
 					return false;
 			}
-		};
+		};*/
 		table.getColumnModel().getColumn(0).setPreferredWidth(100);
 		table.getColumnModel().getColumn(1).setPreferredWidth(100);
 		table.getColumnModel().getColumn(2).setPreferredWidth(100);
@@ -51,10 +62,9 @@ public class Services extends JFrame implements ActionListener, KeyListener
 		this.scrollPane = new JScrollPane(this.table);
 		this.panel.add(this.scrollPane);
 		
-		this.buttonok =new JButton("Main Page");
-		this.buttonok.addActionListener(this);
-		this.panel.add(this.buttonok);
-		
+		this.getBack = new JButton("Return");
+		 this.panel.add(this.getBack);
+		 this.getBack.addActionListener(this);
 		
 		this.add(this.panel);
 		this.setTitle("Services Archive");
@@ -67,15 +77,13 @@ public class Services extends JFrame implements ActionListener, KeyListener
 	@Override
 	public void actionPerformed(ActionEvent ae)
 	{
-		if(ae.getActionCommand() == "Main Page")
+
+		if(ae.getActionCommand() == "Return")
 		{
-			
-			MainPage adminpanel = new MainPage();
-				adminpanel.setVisible(true);
+			 MainPage mainpage = new MainPage();
+				mainpage.setVisible(true);
 				this.setVisible(false);
-		     
-			
-		}
+			}
 	}
 
 	@Override
