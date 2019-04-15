@@ -4,13 +4,13 @@ import javax.swing.*;
 
 import java.awt.event.*;
 
-public class ClientsMain extends JFrame implements ActionListener
+public class ClientCompanyMenu extends JFrame implements ActionListener
 {
 	private JPanel panel;
 	private JButton services,giveBill;
 	private JButton getBack;
 	
-	public ClientsMain() 
+	public ClientCompanyMenu() 
 	{
 		this.InitializeComponents();
 	}
@@ -19,13 +19,13 @@ public class ClientsMain extends JFrame implements ActionListener
 	{
 		this.panel = new JPanel();
 	
-		this.giveBill = new JButton("Фізичні");
+		this.giveBill = new JButton("Створити");
 	
 		this.panel.add(this.giveBill);
 		giveBill.addActionListener(this);
 		
 		
-		this.services = new JButton("Юридичні");
+		this.services = new JButton("Редагувати");
 		services.addActionListener(this);
 		
 		
@@ -42,7 +42,7 @@ public class ClientsMain extends JFrame implements ActionListener
 		
 		this.add(this.panel);
 		this.setSize(200, 200);
-		this.setTitle("Клієнти");
+		this.setTitle("Меню");
 		this.setLocationRelativeTo(null);
 		this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 	}
@@ -50,28 +50,26 @@ public class ClientsMain extends JFrame implements ActionListener
 	@Override
 	public void actionPerformed(ActionEvent ae) 
 	{
-		if(ae.getActionCommand() == "Фізичні")
+		if(ae.getActionCommand() == "Створити")
 		{
 			
-			ClientPhysicalMenu clientphysicalmenu = new ClientPhysicalMenu();
-			clientphysicalmenu.setVisible(true);
-				this.setVisible(false);
+			ClientCompany clientcompany = new ClientCompany();
+			clientcompany.setVisible(true);
+			this.setVisible(false);
 			
 		}
-		else if(ae.getActionCommand() == "Юридичні")
+		else if(ae.getActionCommand() == "Редагувати")
 		{
 			
-			ClientCompanyMenu clientcompanymenu = new ClientCompanyMenu();
-			clientcompanymenu.setVisible(true);
-				this.setVisible(false);
+
 		     
 			
 		}
 		
 		else if(ae.getActionCommand() == "Повернутись")
 			{
-			 MainPage mainpage = new MainPage();
-				mainpage.setVisible(true);
+			 ClientsMain clientsmain = new ClientsMain();
+			 clientsmain.setVisible(true);
 				this.setVisible(false);
 			}
 		
