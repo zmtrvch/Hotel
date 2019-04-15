@@ -42,7 +42,7 @@ public class MainPage extends JFrame implements ActionListener
 		
 		
 		this.add(this.panel);
-		this.setSize(100, 200);
+		this.setSize(150, 200);
 		this.setTitle("Main Menu");
 		this.setLocationRelativeTo(null);
 		this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
