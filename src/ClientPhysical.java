@@ -109,6 +109,10 @@ public class ClientPhysical extends JFrame implements ActionListener
 		int accountId = DbUtils.insertAndGetId(insertAccount);
 		String insertClient = String.format("insert into `individual` values ('%s', '%s', '%s')", accountId, surName, male);
 		DbUtils.ExecuteQuery(insertClient);
+		
+		 ClientsMain clientsmain = new ClientsMain();
+		 clientsmain.setVisible(true);
+			this.setVisible(false);
 	}
 	
 	@Override
