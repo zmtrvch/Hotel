@@ -19,13 +19,13 @@ public class ClientPhysicalMenu extends JFrame implements ActionListener
 	{
 		this.panel = new JPanel();
 	
-		this.giveBill = new JButton("Створити");
+		this.giveBill = new JButton("Add");
 	
 		this.panel.add(this.giveBill);
 		giveBill.addActionListener(this);
 		
 		
-		this.services = new JButton("Редагувати");
+		this.services = new JButton("Edit");
 		services.addActionListener(this);
 		
 		
@@ -34,7 +34,7 @@ public class ClientPhysicalMenu extends JFrame implements ActionListener
 		this.giveBill.setBounds(280,80,200,40);
 		
 		this.panel.add(this.services);
-		this.getBack = new JButton("Повернутись");
+		this.getBack = new JButton("Return");
 		 this.panel.add(this.getBack);
 		 this.getBack.addActionListener(this);
 	
@@ -50,7 +50,7 @@ public class ClientPhysicalMenu extends JFrame implements ActionListener
 	@Override
 	public void actionPerformed(ActionEvent ae) 
 	{
-		if(ae.getActionCommand() == "Створити")
+		if(ae.getActionCommand() == "Add")
 		{
 			
 			ClientPhysical clientphysical = new ClientPhysical();
@@ -58,7 +58,7 @@ public class ClientPhysicalMenu extends JFrame implements ActionListener
 			this.setVisible(false);
 			
 		}
-		else if(ae.getActionCommand() == "Редагувати")
+		else if(ae.getActionCommand() == "Edit")
 		{
 			
 
@@ -66,7 +66,7 @@ public class ClientPhysicalMenu extends JFrame implements ActionListener
 			
 		}
 		
-		else if(ae.getActionCommand() == "Повернутись")
+		else if(ae.getActionCommand() == "Return")
 			{
 			 ClientsMain clientsmain = new ClientsMain();
 			 clientsmain.setVisible(true);

@@ -18,19 +18,19 @@ public class MainPage extends JFrame implements ActionListener
 	{
 		this.panel = new JPanel();
 	
-		this.giveBill = new JButton("Клієнти");
+		this.giveBill = new JButton("Clients");
 	
 		this.panel.add(this.giveBill);
 		giveBill.addActionListener(this);
 		
-		this.bills =  new JButton("Бронювання");
+		this.bills =  new JButton("Booking");
 		this.panel.add(this.bills);
 		bills.addActionListener(this);
 		
-		this.services = new JButton("Проживаючі");
+		this.services = new JButton("Residents");
 		services.addActionListener(this);
 		
-		this.bills =  new JButton("Рахунок");
+		this.bills =  new JButton("Bill");
 		this.panel.add(this.bills);
 		bills.addActionListener(this);
 		
@@ -42,8 +42,8 @@ public class MainPage extends JFrame implements ActionListener
 		
 		
 		this.add(this.panel);
-		this.setSize(200, 200);
-		this.setTitle("Головна сторінка");
+		this.setSize(100, 200);
+		this.setTitle("Main Menu");
 		this.setLocationRelativeTo(null);
 		this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 	}
@@ -51,7 +51,7 @@ public class MainPage extends JFrame implements ActionListener
 	@Override
 	public void actionPerformed(ActionEvent ae) 
 	{
-		if(ae.getActionCommand() == "Рахунок")
+		if(ae.getActionCommand() == "Bill")
 		{
 			
 			BillMain calculatebill = new BillMain();
@@ -60,7 +60,7 @@ public class MainPage extends JFrame implements ActionListener
 		     
 			
 		}
-		else if(ae.getActionCommand() == "Бронювання")
+		else if(ae.getActionCommand() == "Booking")
 		{
 			BookingMain bokingbill = new BookingMain();
 			bokingbill.setVisible(true);
@@ -69,7 +69,7 @@ public class MainPage extends JFrame implements ActionListener
 		     
 			
 		}
-		else if(ae.getActionCommand() == "Проживаючі")
+		else if(ae.getActionCommand() == "Residents")
 		{
 			ResidingMain residingmain = new ResidingMain();
 			residingmain.setVisible(true);
@@ -77,7 +77,7 @@ public class MainPage extends JFrame implements ActionListener
 		     
 			
 		}
-		else if(ae.getActionCommand() == "Клієнти")
+		else if(ae.getActionCommand() == "Clients")
 		{
 			ClientsMain clientgmain = new ClientsMain();
 			clientgmain.setVisible(true);

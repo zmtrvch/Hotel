@@ -30,12 +30,12 @@ public class ClientPhysical extends JFrame implements ActionListener
 		this.getContentPane().add(textField);
 		textField.setColumns(10);
 		
-		JLabel lblName = new JLabel("Ім'я");
+		JLabel lblName = new JLabel("Surname");
 		lblName.setBounds(45, 31, 46, 20);
 		this.getContentPane().add(lblName);
 		
 		
-		JLabel lblPhone = new JLabel("Номер телефону");
+		JLabel lblPhone = new JLabel("Phone");
 		lblPhone.setBounds(45, 68, 250, 20);
 		this.getContentPane().add(lblPhone);
 		
@@ -54,15 +54,15 @@ public class ClientPhysical extends JFrame implements ActionListener
 		textField_2.setColumns(10);
 			
 		
-		JLabel lblSex = new JLabel("Стать");
+		JLabel lblSex = new JLabel("Sex");
 		lblSex.setBounds(45, 234, 46, 14);
 		this.getContentPane().add(lblSex);
 		
-		JLabel lblMale = new JLabel("Чоловіча");
+		JLabel lblMale = new JLabel("Male");
 		lblMale.setBounds(128, 228, 80, 30);
 		this.getContentPane().add(lblMale);
 		
-		JLabel lblFemale = new JLabel("Жіноча");
+		JLabel lblFemale = new JLabel("Female");
 		lblFemale.setBounds(292, 228, 46, 30);
 		this.getContentPane().add(lblFemale);
 		
@@ -76,14 +76,14 @@ public class ClientPhysical extends JFrame implements ActionListener
 		
 		
 		
-		this.submit = new JButton("Створити");
+		this.submit = new JButton("Create");
 		submit.setBounds(120, 387, 100, 50);
 		this.getContentPane().add(submit);
 		submit.addActionListener(this);
 		
 		
 		 
-		this.getBack = new JButton("Повернутись");
+		this.getBack = new JButton("Return");
 		getBack.setBounds(240, 387, 100, 50);
 		this.getContentPane().add(getBack);
 		getBack.addActionListener(this);
@@ -93,7 +93,7 @@ public class ClientPhysical extends JFrame implements ActionListener
 		
 		this.add(this.panel);
 		this.setSize(500, 500);
-		this.setTitle("Фізичний клієнт");
+		this.setTitle("Physical Client");
 		this.setLocationRelativeTo(null);
 		this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 	}
@@ -102,13 +102,13 @@ public class ClientPhysical extends JFrame implements ActionListener
 	public void actionPerformed(ActionEvent ae) 
 	{
 		
-		if(ae.getActionCommand() == "Створити")
+		if(ae.getActionCommand() == "Create")
 		{
 
 
 			
 		}
-		else if(ae.getActionCommand() == "Повернутись")
+		else if(ae.getActionCommand() == "Return")
 		{
 			
 			 ClientsMain clientsmain = new ClientsMain();

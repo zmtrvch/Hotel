@@ -26,9 +26,9 @@ public class Services extends JFrame implements ActionListener, KeyListener
 		this.panel = new JPanel();
 		
 		Vector<String> columns = new Vector<String>();
-		columns.add("Прізвище");
-		columns.add("Дата");
-		columns.add("Назва послуги");
+		columns.add("Surname");
+		columns.add("Data");
+		columns.add("Service Name");
 		
 		//DataConnection data = new DataConnection(); //клас з під'єднанням до бази даний
 		//this.tableModel = new DefaultTableModel(data.getAllServices(), columns);
@@ -52,13 +52,13 @@ public class Services extends JFrame implements ActionListener, KeyListener
 		this.scrollPane = new JScrollPane(this.table);
 		this.panel.add(this.scrollPane);
 		
-		this.buttonok =new JButton("Повернутись на головну");
+		this.buttonok =new JButton("Main Page");
 		this.buttonok.addActionListener(this);
 		this.panel.add(this.buttonok);
 		
 		
 		this.add(this.panel);
-		this.setTitle("Архів послуг");
+		this.setTitle("Services Archive");
 		this.setSize(700, 400);
 		this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		
@@ -68,7 +68,7 @@ public class Services extends JFrame implements ActionListener, KeyListener
 	@Override
 	public void actionPerformed(ActionEvent ae)
 	{
-		if(ae.getActionCommand() == "Повернутись на головну")
+		if(ae.getActionCommand() == "Main Page")
 		{
 			
 			MainPage adminpanel = new MainPage();

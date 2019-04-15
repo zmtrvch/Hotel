@@ -18,30 +18,30 @@ public class BillMain extends JFrame implements ActionListener
 	{
 		this.panel = new JPanel();
 	
-		this.giveBill = new JButton("Розрахувати гостя");
+		this.giveBill = new JButton("Give a Bill");
 	
 		this.panel.add(this.giveBill);
 		giveBill.addActionListener(this);
 		
-		this.bills =  new JButton("Архів рахунків");
+		this.bills =  new JButton("Bill's Archive");
 		this.panel.add(this.bills);
 		bills.addActionListener(this);
 		
-		this.services = new JButton("Список послуг");
+		this.services = new JButton("Services List");
 		services.addActionListener(this);
 		this.giveBill.setBounds(260,80,200,40);
 		this.giveBill.setBounds(280,80,200,40);
 		this.panel.add(this.bills);
 		this.panel.add(this.services);
 	
-		this.getBack = new JButton("Повернутись");
+		this.getBack = new JButton("Return");
 		 this.panel.add(this.getBack);
 		 this.getBack.addActionListener(this);
 	
 		
 		this.add(this.panel);
 		this.setSize(200, 200);
-		this.setTitle("Головна сторінка");
+		this.setTitle("Main Page");
 		this.setLocationRelativeTo(null);
 		this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 	}
@@ -49,7 +49,7 @@ public class BillMain extends JFrame implements ActionListener
 	@Override
 	public void actionPerformed(ActionEvent ae) 
 	{
-		if(ae.getActionCommand() == "Розрахувати гостя")
+		if(ae.getActionCommand() == "Give a Bill")
 		{
 			
 			CalculateBill calculatebill = new CalculateBill();
@@ -58,7 +58,7 @@ public class BillMain extends JFrame implements ActionListener
 		     
 			
 		}
-		else if(ae.getActionCommand() == "Архів рахунків")
+		else if(ae.getActionCommand() == "Bill's Archive")
 		{
 			
 			AllBills allbills = new AllBills();
@@ -67,7 +67,7 @@ public class BillMain extends JFrame implements ActionListener
 		     
 			
 		}
-		else if(ae.getActionCommand() == "Список послуг")
+		else if(ae.getActionCommand() == "Services list")
 		{
 			
 			Services mainpage = new Services();
@@ -77,7 +77,7 @@ public class BillMain extends JFrame implements ActionListener
 			
 		}
 		
-		else if(ae.getActionCommand() == "Повернутись")
+		else if(ae.getActionCommand() == "Return")
 		{
 		 MainPage mainpage = new MainPage();
 			mainpage.setVisible(true);

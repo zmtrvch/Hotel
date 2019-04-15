@@ -27,9 +27,9 @@ public class AllBills extends JFrame implements ActionListener, KeyListener
 		//this.panel.setLayout(null);
 		
 		Vector<String> columns = new Vector<String>();
-		columns.add("Прізвище");
-		columns.add("Дата");
-		columns.add("Сума");
+		columns.add("Surname");
+		columns.add("Data");
+		columns.add("Bill");
 		
 		//DataConnection data = new DataConnection();
 		//this.tableModel = new DefaultTableModel(data.getAllMemberInfo(), columns);
@@ -53,13 +53,13 @@ public class AllBills extends JFrame implements ActionListener, KeyListener
 		this.scrollPane = new JScrollPane(this.table);
 		this.panel.add(this.scrollPane);
 		
-		this.buttonok =new JButton("Повернутись на головну");
+		this.buttonok =new JButton("Main page");
 		this.buttonok.addActionListener(this);
 		this.panel.add(this.buttonok);
 		
 		
 		this.add(this.panel);
-		this.setTitle("Архів рахунків");
+		this.setTitle("Bill's Archive");
 		this.setSize(700, 400);
 		this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		
@@ -69,7 +69,7 @@ public class AllBills extends JFrame implements ActionListener, KeyListener
 	@Override
 	public void actionPerformed(ActionEvent ae)
 	{
-		if(ae.getActionCommand() == "Повернутись на головну")
+		if(ae.getActionCommand() == "Main Page")
 		{
 			
 			MainPage adminpanel = new MainPage();
