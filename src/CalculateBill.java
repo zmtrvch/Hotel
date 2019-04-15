@@ -38,10 +38,10 @@ public class CalculateBill extends JFrame implements ActionListener, ItemListene
 	    this.panel.add(this.surname);
 	    
 	    //this.comboboxSurname = new JComboBox(dc.getRoomNumber());
-		this.comboboxSurname.setBounds(250, 200, 100, 20);
-		this.comboboxSurname.addItemListener((ItemListener) this);
-		this.comboboxSurname.addItemListener(this);
-		this.panel.add(this.comboboxSurname);
+		//this.comboboxSurname.setBounds(250, 200, 100, 20);
+		//this.comboboxSurname.addItemListener((ItemListener) this);
+		//this.comboboxSurname.addItemListener(this);
+		//this.panel.add(this.comboboxSurname);
 	  
        
 		this.chooser = new JDateChooser();
