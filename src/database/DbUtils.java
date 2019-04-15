@@ -1,6 +1,8 @@
 package database;
 
 import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.List;
@@ -10,8 +12,9 @@ import org.apache.commons.dbutils.QueryRunner;
 import org.apache.commons.dbutils.ResultSetHandler;
 import org.apache.commons.dbutils.handlers.BeanListHandler;
 
-import com.mysql.fabric.xmlrpc.Client;
-import com.mysql.jdbc.jdbc2.optional.MysqlDataSource;
+import com.mysql.cj.jdbc.MysqlDataSource;
+
+
 
 public class DbUtils {
 	private DbUtils()
@@ -48,12 +51,47 @@ public class DbUtils {
 		return persons;
 	}
 	
+	  public static int insertAndGetId(String query)
+	    {  
+		  System.out.println(query);
+		  MysqlDataSource ds = getMySQLDataSource();
+		  Connection conn;
+	       int insertedId = 0;    
+
+			try {
+				conn = ds.getConnection();
+		        PreparedStatement ps = conn.prepareStatement(query, Statement.RETURN_GENERATED_KEYS);
+	            ps.execute();
+		        insertedId = getInsertedId(ps);       
+
+			} catch (SQLException e) {
+				
+				e.printStackTrace();
+			}
+	      
+	      return insertedId;
+	    }
+
+	    private static int getInsertedId(PreparedStatement statement) throws SQLException {
+	        ResultSet generatedKeys = statement.getGeneratedKeys();
+	        int insertedId = 0;
+	        if (generatedKeys.next()) {
+	            insertedId = generatedKeys.getInt(1);
+	        }
+	        return insertedId;
+	    }
+	
 	private static MysqlDataSource getMySQLDataSource() {
 		Properties props = new Properties();
 		MysqlDataSource mysqlDS = null;
 		mysqlDS = new MysqlDataSource();
-		mysqlDS.setVerifyServerCertificate(false);
-		mysqlDS.setURL("jdbc:mysql://localhost:3306/hotel?useSSL=false");
+		try {
+			mysqlDS.setVerifyServerCertificate(false);
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		mysqlDS.setURL("jdbc:mysql://localhost:3306/hotel?useSSL=false&allowPublicKeyRetrieval=true");
 		mysqlDS.setUser("root");
 		mysqlDS.setPassword("root");
 		return mysqlDS;

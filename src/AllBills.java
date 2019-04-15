@@ -1,8 +1,6 @@
 import javax.swing.*;
 import javax.swing.table.DefaultTableModel;
 //import net.proteanit.sql.DbUtils;
-import com.mysql.jdbc.Connection;
-import com.mysql.jdbc.PreparedStatement;
 import java.awt.event.*;
 import java.sql.DriverManager;
 import java.sql.ResultSet;

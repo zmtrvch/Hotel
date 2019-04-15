@@ -1,8 +1,7 @@
 import javax.swing.*;
 import javax.swing.table.DefaultTableModel;
 //import net.proteanit.sql.DbUtils;
-import com.mysql.jdbc.Connection;
-import com.mysql.jdbc.PreparedStatement;
+
 import java.awt.event.*;
 import java.sql.DriverManager;
 import java.sql.ResultSet;
@@ -30,7 +29,7 @@ public class Services extends JFrame implements ActionListener, KeyListener
 		columns.add("Data");
 		columns.add("Service Name");
 		
-		//DataConnection data = new DataConnection(); //клас з під'єднанням до бази даний
+		//DataConnection data = new DataConnection(); 
 		//this.tableModel = new DefaultTableModel(data.getAllServices(), columns);
 		this.table = new JTable(this.tableModel)
 		

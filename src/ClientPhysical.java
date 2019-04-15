@@ -2,6 +2,8 @@ import java.awt.*;
 
 import javax.swing.*;
 
+import database.DbUtils;
+
 import java.awt.event.*;
 
 public class ClientPhysical extends JFrame implements ActionListener
@@ -11,8 +13,8 @@ public class ClientPhysical extends JFrame implements ActionListener
 	private JButton getBack;
 	private JTextField textField;
 	private JTextField textField_1;
-	private JTextField textField_2;
-
+	private JRadioButton radioButton;
+	private JRadioButton radioButton_1;
 	
 	public ClientPhysical() 
 	{
@@ -48,12 +50,6 @@ public class ClientPhysical extends JFrame implements ActionListener
 		lblEmailId.setBounds(45, 115, 46, 20);
 		this.getContentPane().add(lblEmailId);
 		
-		textField_2 = new JTextField();
-		textField_2.setBounds(178, 112, 250, 20);
-		this.getContentPane().add(textField_2);
-		textField_2.setColumns(10);
-			
-		
 		JLabel lblSex = new JLabel("Sex");
 		lblSex.setBounds(45, 234, 46, 14);
 		this.getContentPane().add(lblSex);
@@ -66,22 +62,26 @@ public class ClientPhysical extends JFrame implements ActionListener
 		lblFemale.setBounds(292, 228, 46, 30);
 		this.getContentPane().add(lblFemale);
 		
-		JRadioButton radioButton = new JRadioButton("");
+		radioButton = new JRadioButton("");
 		radioButton.setBounds(337, 227, 109, 23);
 		this.getContentPane().add(radioButton);
 		
-		JRadioButton radioButton_1 = new JRadioButton("");
+		radioButton_1 = new JRadioButton("");
 		radioButton_1.setBounds(187, 227, 109, 23);
 		this.getContentPane().add(radioButton_1);
-		
-		
+
 		
 		this.submit = new JButton("Create");
 		submit.setBounds(120, 387, 100, 50);
 		this.getContentPane().add(submit);
-		submit.addActionListener(this);
-		
-		
+		submit.addActionListener(new ActionListener() {
+			
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				addNewUser();
+				
+			}
+		});	
 		 
 		this.getBack = new JButton("Return");
 		getBack.setBounds(240, 387, 100, 50);
@@ -98,6 +98,19 @@ public class ClientPhysical extends JFrame implements ActionListener
 		this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 	}
 
+	private void addNewUser()
+	{
+		String surName = textField.getText();
+		String phone = textField_1.getText();
+		
+		int male = radioButton_1.isSelected() ? 1 : 0;
+
+		String insertAccount = "insert into `client` (`phone`) values ('" + phone + "')";
+		int accountId = DbUtils.insertAndGetId(insertAccount);
+		String insertClient = String.format("insert into `individual` values ('%s', '%s', '%s')", accountId, surName, male);
+		DbUtils.ExecuteQuery(insertClient);
+	}
+	
 	@Override
 	public void actionPerformed(ActionEvent ae) 
 	{
