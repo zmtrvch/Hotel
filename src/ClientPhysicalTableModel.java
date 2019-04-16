@@ -38,7 +38,7 @@ class ClientPhysicalTableModel extends AbstractTableModel {
 	    if (column == 2)
 	    	return dataEntries.get(row).getSurname();
 	    if (column == 3)
-	    	return dataEntries.get(row).getSex();
+	    	return dataEntries.get(row).getSex() == 0 ? "Female" : "Male";
 	    
 	    return "Something went wrong";
 	  }
