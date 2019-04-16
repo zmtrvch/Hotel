@@ -61,17 +61,17 @@ public class ClientCompanyMenu extends JFrame implements ActionListener
 		else if(ae.getActionCommand() == "Edit")
 		{
 			
-
-		     
+			ClientCompanyList CClist = new ClientCompanyList();
+			CClist.setVisible(true);
+			this.setVisible(false);
 			
 		}
-		
 		else if(ae.getActionCommand() == "Return")
-			{
+		{
 			 ClientsMain clientsmain = new ClientsMain();
 			 clientsmain.setVisible(true);
-				this.setVisible(false);
-			}
+			 this.setVisible(false);
+		}
 		
 	}
 

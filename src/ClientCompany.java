@@ -134,10 +134,10 @@ public class ClientCompany extends JFrame implements ActionListener
 				this.setVisible(false);
 		     
 			
-		}else if (ae.getActionCommand() == "Test Delete")
+		}/*else if (ae.getActionCommand() == "Test Delete")
 		{
 			removeCompanyUserById(2);
-		}
+		}*/
 		
 		
 	}
