@@ -102,4 +102,8 @@ class ClientPhysicalTableModel extends AbstractTableModel {
 		  dataEntries = DbUtils.GetMapped(query, PhysicalClientEditModel.class);
 		  fireTableDataChanged();
 	  }
+	  
+	  PhysicalClientEditModel getItem(int row) {
+		  return dataEntries.get(row);
+	  }
 }

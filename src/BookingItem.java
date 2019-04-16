@@ -4,7 +4,9 @@ public class BookingItem {
 
 	private int id;
 	private int clientId;
+	private String clientPhone;
 	private int roomId;
+	private int roomNumber;
 	private Date bookDate;
 	private Date checkInDate;
 	private int duration;
@@ -73,6 +75,22 @@ public class BookingItem {
 
 	public void setCancelReason(String cancelReason) {
 		this.cancelReason = cancelReason;
+	}
+
+	public String getClientPhone() {
+		return clientPhone;
+	}
+
+	public void setClientPhone(String clientPhone) {
+		this.clientPhone = clientPhone;
+	}
+
+	public int getRoomNumber() {
+		return roomNumber;
+	}
+
+	public void setRoomNumber(int roomNumber) {
+		this.roomNumber = roomNumber;
 	}
 
 }

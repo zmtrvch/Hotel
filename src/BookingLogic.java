@@ -10,9 +10,12 @@ public class BookingLogic {
 	}
 	
 	List<BookingItem> getAll() {
-		String query = "select id_booking as id, id_client as clientId, id_room as roomId, "
-				+ "book_date as bookDate, check_in_date as checkInDate, duration as duration, "
-				+ "cancel_date as cancelDate, cancel_reason as cancelReason from booking";
+		String query = "select id_booking as id, b.id_client as clientId, b.id_room as roomId, "
+				+ "book_date as bookDate, check_in_date as checkInDate, duration, "
+				+ "cancel_date as cancelDate, cancel_reason as cancelReason, phone "
+				+ "as clientPhone, room_number as roomNumber from booking b "
+				+ "inner join client c on b.id_client = c.id_client "
+				+ "inner join room r on b.id_room = r.id_room";
 		List<BookingItem> bookings = DbUtils.GetMapped(query, BookingItem.class);
 		
 		return bookings;

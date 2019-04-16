@@ -55,9 +55,9 @@ public class BookingMain extends JFrame implements ActionListener
 	{
 		if(ae.getActionCommand() == "Add")
 		{
-			
-			
-			
+			Booking booking = new Booking();
+			booking.setVisible(true);
+			this.setVisible(false);
 		}
 		else if(ae.getActionCommand() == "Edit")
 		{
